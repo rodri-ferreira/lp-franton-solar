@@ -24,13 +24,24 @@ button {
 
 .ativar { 
     height: 210px !important;
+    background-color: #000 !important;
+}
+
+.transform-add {
+    transform: background-color 0s ease-in-out;
+}
+
+.transform-remove {
+    transition: background-color 0.5s ease-in-out;
 }
 
 /*HEADER Inicio*/
 header {
     width: 100%;
-    background-color: #000;
+    background-color: transparent;
     position: fixed;
+    z-index: 1;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .header-section {
@@ -41,7 +52,7 @@ header {
     max-width: 1400px;
     height: 100px;
     margin: 0 auto;
-    background-color: #000;
+    background-color: transparent;
 }
 
 h1 {
@@ -55,12 +66,14 @@ h1 {
 .header-navegacao {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 80px;
+    /* transition: 0.5s; */
 }
 
 .header-lista {
     display: flex;
     gap: 30px;
+    
 }
 
 .header-lista-li {
@@ -84,7 +97,7 @@ h1 {
 }
 
 .header-buttonContato {
-    background-color: #000;
+    background-color: transparent;
     border: 1px solid #fff;
     padding: 10px;
     border-radius: 10px 10px 10px 0;
@@ -98,14 +111,104 @@ h1 {
 
 .header-buttonMenu {
     color: #fff;
-    background-color: #000;
+    background-color: transparent;
     font-size: 30px;
     display: none;
 }
 /*HEADER Fim*/
 
 /*MAIN Inicio*/
+main{
+    width: 100%;
+    max-width: 1400px;
+}
 
+/* banner-section Inicio*/
+.banner-section {
+    max-width: 1400px;
+    height: 100vh; 
+    background-image: url('/img/banner-principal-mobile.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner-container {
+    background-color: #0000005b;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+.banner-container--texto {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.banner-container--texto-h2 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #fff;
+    line-height: 50px;
+}
+
+.banner-container--form {
+    border: 5px solid #fff;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 350px;
+    height: 500px;
+    position: relative;
+    top: 130px;
+}
+
+.banner-container--label-form {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.banner-containter--label {
+    margin: 15px 0px 10px 0px;
+    color: #fff;
+}
+
+.banner-container--input {
+    height: 50px;
+    padding-left: 10px ;
+}
+
+.banner-container--input:focus{
+    outline: none;
+}
+
+.banner-container--buttonContato {
+    padding: 10px;
+    text-align: center;
+    margin: 15px auto 0 auto;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 150px;
+    transition: 0.5s;
+}
+
+.buttonEsconder {
+    display: none;
+}
+
+.banner-container--buttonContato:hover {
+    background-color: #aaaaaa;
+}
+
+
+/* banner-section Fim*/
 /*MAIN Fim*/
 
 /*FOOTER Inicio*/
@@ -124,7 +227,7 @@ h1 {
         text-align: center;
         position: absolute;
         top: 100px;
-        background-color: #000;
+        background-color: transparent;
         transition: 0.9s;
     }
 
@@ -163,20 +266,83 @@ h1 {
     /*HEADER Fim*/
 
     /*MAIN Inicio*/
+    /* banner-section Inicio*/
+    .banner-container {
+        flex-direction: column;
+        padding-top: 300px;
+        position: static;
+    }
+    /* banner-section Fim*/
     /*MAIN Fim*/
 }
 
 /*Media 768px*/
 @media (max-width: 768px) {
+    .banner-container {
+        flex-direction: column;
+        padding-top: 0px;
+        position: static;
+    }
 
+    .banner-container--texto {
+        width: 90%;
+        text-align: center;
+        gap: 50px;
+        
+    }
+
+    .banner-container--texto-h2 {
+        font-size: 1.5rem;
+    }
+
+    .buttonEsconder {
+        display: block;
+    }
 }
 
 /*Media 576px*/
 @media (max-width: 768px) {
-    
+    .banner-container--form {
+        display: none;
+    }
 }
 
 /*Media 450px*/
 @media (max-width: 450px) {
+    .banner-section {
+        height: 80vh;
+    }
+
+    .banner-container {
+        height: 80vh;
+    }
     
 }
+
+
+
+
+
+/*Mudar a cor da barra lateral*/
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #000000;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 0px none #ffffff;
+  }
