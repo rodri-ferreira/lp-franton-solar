@@ -22,6 +22,10 @@ button {
     cursor: pointer;
 }
 
+html,body {
+    overflow-x: hidden;
+}
+
 .ativar { 
     height: 210px !important;
     background-color: #000 !important;
@@ -120,12 +124,11 @@ h1 {
 /*MAIN Inicio*/
 main{
     width: 100%;
-    max-width: 1400px;
 }
 
 /* banner-section Inicio*/
 .banner-section {
-    max-width: 1400px;
+    width: 100%;
     height: 100vh; 
     background-image: url('/img/banner-principal-mobile.webp');
     background-size: cover;
@@ -206,9 +209,161 @@ main{
 .banner-container--buttonContato:hover {
     background-color: #aaaaaa;
 }
-
-
 /* banner-section Fim*/
+
+/*Vantagens-section Inincio*/
+.vantagens-section {
+    padding: 120px  50px 50px 50px;
+    background-color: #000;
+}
+
+.vantagens-section--titulo {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.vantagens-section--cards {
+    display: flex;
+    margin-top: 50px;
+    gap: 25px;
+    cursor: pointer;
+}
+
+.vantagens-cards {
+    border: 2px solid #fff;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s !important;
+}
+
+.vantagens-cards:hover {
+    scale: 1.1;
+    background-color: #1d1d1d;
+}
+
+.vantagens-card--img {
+    display: block;
+    width: 120px;
+}
+
+.vantagens-card--titulo {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.vantagens-card--texto {
+    color: #cecece;
+    text-align: justify;
+}
+/*Vantagens-section Fim*/
+
+/*Quem somos Inicio*/
+.quem-somos-section {
+    padding: 50px;
+    background-color: #1d1d1d;
+}
+
+.quem-somos-section--conteudo {
+    margin-top: 50px;
+    display: flex;
+    gap: 50px
+}
+
+.quem-somos-section--img {
+    display: block;
+    width: 50%;
+}
+
+.quem-somos--conteudo-main {
+    margin-top: 30px;
+}
+
+.quem-somos--texto-p {
+    color: #fff;
+}
+
+.quem-somos--ul {
+    margin: 30px 0;
+    color: #fff;
+    list-style: circle;
+    margin-left: 15px;
+}
+
+.quem-somos--button {
+    background-color: green;
+    display: block;
+    margin: 0 auto;
+}
+
+.marcas-section {
+    background-color: #000;
+    padding: 50px;
+}
+
+.marcas-section-slider{
+    position: relative;
+    padding: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.arrow-right,.arrow-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    font-size: 40px;
+}
+
+.arrow-right {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    font-size: 40px;
+}
+
+.marcas-galeria-grande {
+    overflow-x: auto;
+}
+
+.marcas-galeria {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.item {
+    width: 200px;
+    margin: 0 50px;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.marcas-galeria-grande::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .marcas-galeria-grande {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+/*Quem somos Fim*/
+
+
+
+
+
 /*MAIN Fim*/
 
 /*FOOTER Inicio*/
@@ -269,26 +424,50 @@ main{
     /* banner-section Inicio*/
     .banner-container {
         flex-direction: column;
-        padding-top: 300px;
-        position: static;
+        padding-top: 100px;
+        height: 120vh;
+        max-height: 870px;
+    }
+
+    .banner-section {
+        height: 120vh;
+        max-height: 870px;
+    }
+
+    .banner-container--texto-h2 {  
+        margin-bottom: -50px;
     }
     /* banner-section Fim*/
+
+    /*Vantagens-section Inincio*/
+    .vantagens-section--cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .vantagens-cards {
+        width: 40%;
+    }
+    /*Vantagens-section Fim*/
     /*MAIN Fim*/
 }
 
 /*Media 768px*/
 @media (max-width: 768px) {
+    .banner-section {
+        height: 100vh;
+    }
     .banner-container {
         flex-direction: column;
         padding-top: 0px;
         position: static;
+        height: 100vh;
     }
 
     .banner-container--texto {
         width: 90%;
         text-align: center;
         gap: 50px;
-        
     }
 
     .banner-container--texto-h2 {
@@ -297,6 +476,46 @@ main{
 
     .buttonEsconder {
         display: block;
+    }
+
+    .vantagens-section {
+        padding: 60px  40px 25px 40px;
+        background-color: #000;
+    }
+    .vantagens-section--cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .vantagens-cards {
+        width: 100%;
+        cursor: default;
+    }
+
+    .vantagens-cards:hover {
+        scale: 1.1;
+        background-color: #000;
+    }
+    
+    .vantagens-card--img {
+        width: 80px;
+    }
+    
+    .vantagens-card--titulo {
+        font-size: 1.3rem;
+    }
+
+    .quem-somos-section {
+        padding: 30px;
+    }
+
+    .quem-somos-section--conteudo {
+        flex-direction: column;
+        gap: 20px;         
+    }
+
+    .quem-somos-section--img {
+        width: 100%;
     }
 }
 
