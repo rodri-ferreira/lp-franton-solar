@@ -327,31 +327,106 @@ main{
 
 /*projetos-section Inicio*/
 .projetos-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 50px;
     background-color: #1d1d1d;
 }
 
-.projetos-section-slider {
-    height: 250px;
-    width: 700px;
-    border: 1px solid red;
-    overflow: hidden;
-    margin: 50px auto;
-}
-  
-.projeto-carrossel-container {
+.projetos-section--imgs {
+    width: 90%;
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
     align-items: center;
     justify-content: center;
-    transition: transform 0.5s ease;
+    gap: 50px;
 }
 
-.projeto-carrossel-container img {
-    border: 1px solid red;
+.projetos-section--imgs img {
+    width: 25%;
+    cursor: pointer;
+}
+
+.projetos-section--imgs img:hover {
+    scale: 1.1;
+    transition: 0.3s;
+}
+
+.projetos-dialog {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.692);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.exibir-dialog {
+    display: block;
+    width: 35%;
+}
+
+.btnDialog {
+    padding: 10px;
+}
+/*projetos-section Fim*/
+/*Faq-section Inicio*/
+.faq-section {
+    background-color: #000000;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.faq-container {
+    width: 70%;
+    margin-top: 40px;
+}
+
+.faq-div {
     width: 100%;
 }
 
-/*projetos-section Fim*/
+.faq-h3 {
+    color: #fff;
+    border: 1px solid #202020;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.faq-p {
+    color: #fff;
+    background-color: #141414;
+    height: 0;
+    overflow: hidden;
+    margin-top: 10px;
+    padding: 0px 20px 0px 20px;
+    transition: 0.3s;
+}
+
+.ativar-faq-p {
+    padding: 20px;
+    height: auto;
+    transition: 0.3s;
+    
+}
+
+
+/*Faq-section Fim*/
+
+
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .marcas-galeria-grande::-webkit-scrollbar {
     display: none;
@@ -593,6 +668,14 @@ footer {
         width: 70%;
         margin-bottom: 20px;
     }
+
+    .faq-section {
+        padding: 50px 30px;
+    }
+
+    .faq-container {
+        width: 80%;
+    }
 }
 
 /*Media 768px*/
@@ -667,6 +750,31 @@ footer {
 
     .footer-container--form {
         width: 70%;
+    }
+
+    .projetos-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 0;
+        background-color: #1d1d1d;
+    }
+
+    .projetos-section--imgs img {
+        width: 40%; 
+    }
+
+    .exibir-dialog {
+        display: block;
+        width: 70%;
+    }
+
+    .faq-section {
+        padding: 50px 10px;
+    }
+
+    .faq-container {
+        width: 90%;
     }
 }
 
