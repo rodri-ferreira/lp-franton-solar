@@ -9,6 +9,8 @@ const imgArray = [
     "img/banner-mobile-5.webp"
 ]
 const faqClick = document.querySelectorAll('.faq-h3')
+const linksNavegacao = document.querySelectorAll('.header-lista-li')
+const logoFranton = document.querySelector('.logo-franton')
 
 const ativarMenuResponsivo = () => {
     const nav = document.querySelector('.header-navegacao')
@@ -61,6 +63,13 @@ const fecharDialog = () => {
     document.querySelector('.projetos-dialog').style.display = 'none'
 }
 
+const removerClassAtivar = () => {
+    const nav = document.querySelector('.header-navegacao')
+    const header = document.getElementById('header');
+    nav.classList.remove('ativar');
+    header.classList.remove('ativar')
+}
+
 btnMenu.addEventListener('click', ativarMenuResponsivo);
 window.addEventListener('scroll', mudarCorHeader)
 window.addEventListener('resize', verificarLarguraTela);
@@ -71,5 +80,8 @@ btnModalFechar.addEventListener('click', fecharDialog)
 faqClick.forEach((elemento) => {
     elemento.addEventListener('click', exibirFaq)
 } )
-
+linksNavegacao.forEach((elemento) => {
+    elemento.addEventListener('click', removerClassAtivar)
+})
+logoFranton.addEventListener('click', removerClassAtivar)
 
