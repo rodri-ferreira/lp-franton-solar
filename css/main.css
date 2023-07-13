@@ -463,6 +463,10 @@ footer {
     margin-top: -20px ;
 }
 
+.footer-img-logo {
+    width: 100%;
+}
+
 .footer-pelicula {
     background-color: rgba(0, 0, 0, 0.486);
     display: flex;
@@ -666,6 +670,10 @@ footer {
 
 /*Media 768px*/
 @media (max-width: 768px) {
+    .header-logo {
+        width: 70px;
+    }
+    
     .banner-section {
         height: 100vh;
     }
